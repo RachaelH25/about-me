@@ -5,21 +5,55 @@
 General styling / Elements
 **************/
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
+  font-family: "Ruthie", cursive;
+  color: white;
 }
 
 nav li {
   list-style: none;
   display: inline-block;
-  cursor: pointer;
-  margin: 0 10px;
+  color: white;
 }
 nav li:hover {
-  color: brown;
+  color: grey;
+}
+nav li a {
+  text-decoration: none;
+  color: inherit;
+  margin: 0 1rem;
 }
 
 .bio {
   margin-bottom: 10px;
+}
+
+.fave-things {
+  margin: 0 1.5rem 2rem 2rem;
+  width: 90%;
+}
+
+.list-headings {
+  font-size: 1.25rem;
+}
+
+.hobbies {
+  margin: 0 1.5rem 2rem 2rem;
+  width: 90%;
+}
+
+.education {
+  background-color: grey;
+  color: #013220;
+  width: 90%;
+  max-width: 50ch;
+  margin: auto;
+  padding-left: 10px;
+}
+h5 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: black;
 }
 
 /*************
@@ -27,12 +61,15 @@ Images
 **************/
 img {
   width: 100%;
-  display: block;
+  display: flex;
+  flex-direction: row;
 }
 
-.bio-image {
-  object-fit: scale-down;
-  max-width: 200px;
+.img-container {
+  object-fit: cover;
+  text-align: center;
+  font-size: 0.75rem;
+  margin: 1rem 0;
 }
 /*************
 Buttons / Links / li / inputs
@@ -49,6 +86,7 @@ body {
   letter-spacing: 0.01em;
   line-height: 1.6;
   background-color: whitesmoke;
+  font-family: "Raleway", sans-serif;
 }
 
 .container {
@@ -59,9 +97,10 @@ body {
 
 .header-container {
   text-align: center;
-}
-
-main {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  background-color: #013220;
 }
 
 footer {
@@ -71,3 +110,13 @@ footer {
 /*************
 Media Queries
 **************/
+@media (min-width: 700px) {
+  h1 {
+    font-size: 6rem;
+  }
+  .img-container {
+    float: right;
+    margin: 0 5px;
+    width: 45%;
+  }
+}
