@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  /* border: 1px solid black; */
 }
 /*************
 General styling / Elements
@@ -8,20 +9,6 @@ h1 {
   font-size: 4rem;
   font-family: "Ruthie", cursive;
   color: white;
-}
-
-nav li {
-  list-style: none;
-  display: inline-block;
-  color: white;
-}
-nav li:hover {
-  color: grey;
-}
-nav li a {
-  text-decoration: none;
-  color: inherit;
-  margin: 0 1rem;
 }
 
 .bio {
@@ -33,21 +20,18 @@ nav li a {
   width: 90%;
 }
 
-.list-headings {
-  font-size: 1.25rem;
-}
-
 .hobbies {
   margin: 0 1.5rem 2rem 2rem;
   width: 90%;
 }
 
 .education {
+  border: dashed black;
   background-color: grey;
   color: #013220;
   width: 90%;
   max-width: 50ch;
-  margin: auto;
+  margin: 10px auto;
   padding-left: 10px;
 }
 h5 {
@@ -74,7 +58,30 @@ img {
 /*************
 Buttons / Links / li / inputs
 **************/
+nav li {
+  list-style: none;
+  display: inline-block;
+  color: white;
+}
+nav li:hover {
+  color: grey;
+}
+nav li a {
+  text-decoration: none;
+  color: inherit;
+  margin: 0 1rem;
+}
 
+.list-headings {
+  font-size: 1rem;
+  padding-right: 1.5rem;
+}
+
+.bio-lists {
+  border: 1px solid black;
+  width: 50%;
+  display: inline-block;
+}
 /*************
 Typography
 **************/
