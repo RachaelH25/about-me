@@ -5,3 +5,5 @@
 - HTML
 - CSS
 - JavaScript
+
+![Alt text](images/lighthousescore.PNG)

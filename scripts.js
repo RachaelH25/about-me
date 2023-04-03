@@ -83,68 +83,129 @@ function petsQ() {
 petsQ();
 
 function guessNum() {
-  const number = 7;
-  let guess = prompt("Guess a number between 1 and 10?");
+  const num = 7;
+  let guess = prompt("Guess a number between 1 and 10! You have 4 attempts");
 
   for (let i = 3; i >= 0; i--) {
-    console.log("hello");
-    if (i == 0) {
-      alert("Unlucky, that was your final attempt. The number was " + number);
-      break;
-    }
-    if (guess < number) {
-      alert("Too low, guess again.");
-      guess = prompt(
-        "Please guess the number again? You now have " + i + " attempts left."
-      );
-    } else if (guess > number) {
-      alert("Too high, guess again.");
-      guess = prompt(
-        "Please guess the number again? You now have " + i + " attempts left."
-      );
-    } else {
+    if (guess == num) {
       userPoints++;
-      alert("Well done, that's correct. You have " + userPoints + " points.");
+      alert(`Congratulations, you have guessed my number, it was ${num}.`);
+      alert(`You have ${userPoints} points.`);
+      break;
+    } else if (i === 0) {
+      alert(`You're incorrect, the number was ${num}.`);
+      break;
+    } else if (guess > num) {
+      alert(`To high, try again!`);
+      guess = prompt(
+        `Guess a Number between 1 and 10! You have ${i} attempts remaining`
+      );
+    } else if (guess < num) {
+      alert(`To low, try again`);
+      guess = prompt(
+        `Guess a Number between 1 and 10! You have ${i} attempts remaining`
+      );
+    } else if (guess == num) {
+      userPoints++;
+      alert(
+        `Congrats! You've guessed my number! You have ${userPoints} points`
+      );
       break;
     }
   }
-  alert("you have " + userPoints + " points.");
-  alert("That's the end of the quiz. Thanks for playing, " + user + "!");
 }
+
 guessNum();
 
-// let answer = prompt(
-//   "Name one of the Top Five places in my list of Countries I want to visit."
-// ).toLowerCase();
-// console.log(answer);
-// let topTenList = ["japan", "taiwan", "china", "south korea", "thailand"];
+function lastQuestion() {
+  let fiveAnswers = ["japan", "thailand", "south korea", "taiwan", "china"];
 
-// for (let i = 6; i >= topTenList.length; i--) {
-//   if (i == 0) {
-//     alert(
-//       "Unlucky, you're out of guesses. They were Japan, Thailand, South Korea, Taiwan and China."
-//     );
-//     break;
-//   }
-//   if ((answer = "japan")) {
-//     userPoints++;
-//     alert("Well done, that's correct. You have " + userPoints + " points.");
-//   } else {
-//     alert("Incorrect. Try again.");
-//     answer = prompt(
-//       "Please guess another country? You now have " + i + " attempts left."
-//     );
-//     break;
-//   }
-// }
+  let guess = prompt(
+    "Name one of the Top Five places in my list of countries that I want to visit? You have 6 attempts."
+  ).toLowerCase();
 
-// let index = topTenList.indexOf("taiwan");
-// console.log(index);
-
-// if (answer === "yes" || answer === "y") {
-//   userPoints++;
-// } else {
-//   alert("Wrong! Try again.");
-// }
-
-// alert("you have " + userPoints + " points.");
+  for (let i = 6; i >= 0; i--) {
+    if (i === 0) {
+      alert(
+        "You have no more attempts. The answers are Japan, Thailand, South Korea, Taiwan and China."
+      );
+      break;
+    }
+    if (guess === fiveAnswers[0]) {
+      userPoints++;
+      alert(
+        "Correct, I almost went to Japan for uni but alas, it was lockdown times."
+      );
+      alert(`You have ${userPoints} points`);
+      alert(
+        "That's the end of the quiz! You got " +
+          userPoints +
+          " points. Thanks for playing, " +
+          user +
+          "!"
+      );
+      break;
+    } else if (guess === fiveAnswers[1]) {
+      userPoints++;
+      alert(
+        "Correct. I watch a lot of Thai dramas and it looks so nice there!"
+      );
+      alert(`You have ${userPoints} points.`);
+      alert(
+        "That's the end of the quiz! You got " +
+          userPoints +
+          " points. Thanks for playing, " +
+          user +
+          "!"
+      );
+      break;
+    } else if (guess === fiveAnswers[2]) {
+      userPoints++;
+      alert("Correct. South-Korea. The land of K-pop and K-dramas.");
+      alert(`You have ${userPoints} points.`);
+      alert(
+        "That's the end of the quiz! You got " +
+          userPoints +
+          " points. Thanks for playing, " +
+          user +
+          "!"
+      );
+      break;
+    } else if (guess === fiveAnswers[3]) {
+      userPoints++;
+      alert(
+        "Correct. I learnt a lot about the history of Taiwan in university and would love it go."
+      );
+      alert(`You have ${userPoints} points.`);
+      alert(
+        "That's the end of the quiz! You got " +
+          userPoints +
+          " points. Thanks for playing, " +
+          user +
+          "!"
+      );
+      break;
+    } else if (guess === fiveAnswers[4]) {
+      userPoints++;
+      alert(
+        "Correct. 20th Century China was my favourite thing to learn about in university and there are so many things to see!"
+      );
+      alert(
+        "That's the end of the quiz! You got " +
+          userPoints +
+          " points. Thanks for playing, " +
+          user +
+          "!"
+      );
+      break;
+    } else {
+      console.log("lose");
+      guess = prompt(
+        "Incorrect! Try again to name somewhere in the Top Five of my Top Ten list of countries that I want to visit. You have " +
+          (i - 1) +
+          " attempts left."
+      ).toLowerCase();
+    }
+  }
+}
+lastQuestion();
